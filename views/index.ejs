@@ -1,11 +1,28 @@
-<%- include('partials/header') -%>
-
-<main class="container">
-    <div class="row justify-content-around mt-5">
-        <a href="/login" class="col-3 btn btn-primary"> Login</a>
-        <a href="/signup" class="col-3 btn btn-primary"> Signup</a>
-    </div>
-</main>
-    
-
-<%- include('partials/footer') -%>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>doodlebook</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Caveat&family=Lato:wght@300;400&family=Merriweather:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/output.css"/>
+  </head>
+  <body>
+    <main class="w-screen h-screen flex">
+			<img src="images/absurd.png">
+				<div class="flex flex-col h-screen justify-center mr-14">
+        	<div class="text-center">
+        	  <h1 class="font-['caveat'] text-8xl"><a href="/profile">doodlebook</a></h1>
+						<p class="inline-block font-['merriweather'] mt-4 mb-8 text-sm leading-6 tracking-wider">Share what you’re doodlin', or see what's new from others all over the world. Explore our community where you can feel free to express yourself and share everything from your daily doodles to life's masterpieces.</p>
+        	</div>
+				
+        	<div class="flex justify-center mt-5 font-['caveat'] text-4xl">
+        	  <a href="/login" class="border-[1px] border-black py-2 px-10 ml-4 rounded-md"> <button>login</button></a>
+        	  <a href="/signup" class="bg-yellow py-2 px-10 ml-4 rounded-md"> <button>signup</button></a>
+        	</div>
+				</div>
+    </main>
+  </body>

@@ -7,7 +7,11 @@ module.exports = {
   "./views/partials/*.ejs"
 ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        yellow: '#ffb703',
+      }
+    },
   },
   plugins: [],
 }
