@@ -739,12 +739,12 @@ video {
   width: 500px;
 }
 
-.w-4\/6 {
-  width: 66.666667%;
-}
-
 .w-\[400px\] {
   width: 400px;
+}
+
+.w-4\/6 {
+  width: 66.666667%;
 }
 
 .border-collapse {
