@@ -3,6 +3,15 @@ const Post = require("../models/Post");
 const User = require("../models/User")
 
 module.exports = {
+  uploadPost: async (req, res) => {
+    try {
+      const posts = await Post.find({ user: req.user.id })
+      res.render("upload.ejs", { posts: posts, user: req.user });
+    }
+    catch(err) {
+      console.error(err)
+    }
+  },
   getProfile: async (req, res) => {
     try {
       const posts = await Post.find({ user: req.user.id });
@@ -28,9 +37,6 @@ module.exports = {
     } catch (err) {
       console.log(err);
     }
-  },
-  uploadPost: (req, res) => {
-    res.render("upload.ejs");
   },
 
   createPost: async (req, res) => {
