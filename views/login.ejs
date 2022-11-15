@@ -1,37 +1,40 @@
 <%- include('partials/header') -%>
 
 
-  <div class="flex justify-center border-[1px]">
-    <section class="col-6 mt-5">
+  <div class="flex justify-center">
+    <section class="flex flex-col justify-center mt-10">
       <% if (locals.messages.errors) { %> <% messages.errors.forEach( el => { %>
-      <div class="alert alert-danger"><%= el.msg %></div>
+      <div class="font-['lato']"><%= el.msg %></div>
       <% }) %> <% } %> <% if (locals.messages.info) { %> <%
       messages.info.forEach( el => { %>
-      <div class="alert alert-info"><%= el.msg %></div>
+      <div class="font-['lato']"><%= el.msg %></div>
       <% }) %> <% } %>
-      <form action="/login" method="POST">
+      <form action="/login" method="POST" autocomplete="off">
         <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label"
-            >EMAIL</label
-          >
+          <label for="exampleInputEmail1" class="font-['caveat'] text-4xl"
+            >email</label
+          ><br>
           <input
             type="email"
-            class="form-control"
+            class="border-[1px] font-['lato'] text-l py-2 px-2 w-[300px] text-left"
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
             name="email"
+            autocomplete="off"
           />
         </div>
         <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <label for="exampleInputPassword1" class="font-['caveat'] text-4xl">password</label>
+          <br>
           <input
             type="password"
-            class="form-control"
+            class="border-[1px] font-['lato'] text-lg py-2 px-2 w-[300px] text-left"
             id="exampleInputPassword1"
             name="password"
+            autocomplete="off"
           />
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="font-['caveat'] text-3xl bg-yellow mt-4 py-2 px-10 rounded-md">submit</button>
       </form>
     </section>
   </div>

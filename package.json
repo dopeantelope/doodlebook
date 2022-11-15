@@ -1,7 +1,7 @@
 {
-  "name": "jiffypic",
+  "name": "doodlebook",
   "version": "1.0.0",
-  "description": "A social media to upload, like and comment images",
+  "description": "A social media to upload doodles and drawings",
   "main": "index.js",
   "scripts": {
     "start": "concurrently \"nodemon server.js\" \"tailwindcss -i ./public/input.css -o ./public/output.css --watch\" ",

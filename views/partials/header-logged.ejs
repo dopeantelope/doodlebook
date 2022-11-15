@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>doodlebook</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Lato:wght@300;400&family=Merriweather:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/output.css"/>
+  </head>
+  <body class="font-['lato']">
+    <header class="flex justify-between mt-6 items-center mx-12">
+      <h1 class="font-['caveat'] text-7xl justify-center"><a href="/profile">doodlebook</a></h1>
+      <div class="flex items-center align-center justify-evenly w-4/6 mt-4">
+        <h1 class="font-['caveat'] text-4xl mb-2">yo, <%= user.userName %></h1>
+        <a class="btn btn-primary" href="/profile">PROFILE</a>
+        <a class="btn btn-primary" href="/feed">FEED</a>
+        <a class="btn btn-primary" href="/feed">INPSIRATION</a>
+        <a class="btn btn-primary" href="/post/uploadPost">ADD DOODLE</a>
+        <a href="/logout" class="font-['caveat'] text-3xl bg-yellow text-black mt-3 py-2 px-10 rounded-md mb-4"><button>logout</button></a>
+      </div>
+        
+    </header>
+  </body>
+</html>
