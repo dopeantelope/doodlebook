@@ -1,17 +1,17 @@
 <%- include('partials/header-logged') -%>
-<div class="flex justify-center mt-4 mx-12 mb-20">
-  <div class="w-[600px] p-6">
-    <h2 class="font-['caveat'] text-6xl mb-4 text-center">upload doodle</h2>
+<div class="flex justify-center mx-12 mb-20">
+  <div class="w-[600px] p-6 pt-0">
+    <h2 class="font-['caveat'] text-6xl mb-8 text-center">upload doodle</h2>
     <form action="/post/createPost" enctype="multipart/form-data" method="POST">
-      <div class="mb-3">
+      <div class="mb-4">
           <label for="title" class="form-label font-['caveat'] text-4xl">title*</label><br>
           <input type="text" class="form-control border-[1px] font-['lato'] w-full text-l py-2 px-2 text-left" id="title" name="title">
       </div>
-      <div class="mb-3">
+      <div class="mb-4">
         <label for="caption" class="form-label font-['caveat'] text-4xl">caption*</label>
         <textarea class="form-control border-[1px] font-['lato'] text-l py-2 px-2 w-full text-left" id="caption" name="caption"></textarea>
       </div>
-      <div class="mb-3">
+      <div class="mb-4">
         <label for="imgUpload" class="form-label font-['caveat'] text-4xl">image*</label><br>
         <input type="file" class="form-control border-[1px] w-full font-['lato'] text-l py-2 px-2 text-left" id="imageUpload" name="file">
       </div>

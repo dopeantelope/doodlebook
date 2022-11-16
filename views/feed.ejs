@@ -1,8 +1,8 @@
 <%- include('partials/header-logged') -%>
-  <div class="mt-4 mx-12 mb-20">
-    <div class="flex flex-col items-center mt-[36px]">
+  <div class="mx-6 lg:mx-12 mb-20">
+    <div class="flex flex-col items-center">
       <h2 class="font-['caveat'] text-6xl mb-4">doodlebook</h2>
-      <ul class="grid grid-cols-3 gap-4 mt-5">
+      <ul class="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3 lg:gap-4 mt-5">
         <% for(var i=0; i<posts.length; i++) {%>
           <li class="flex justify-center">
             <a href="/post/<%= posts[i]._id%>">

@@ -12,9 +12,9 @@
     <link rel="stylesheet" href="/output.css"/>
   </head>
   <body class="font-['lato']">
-    <header class="flex justify-between mt-6 items-center mx-12">
+    <header class="flex justify-between m-6 mb-4 lg:m-6 lg:mb-12 lg:items-center lg:mx-8">
       <img src="/images/hi.png" class="logo w-[100px]">
-      <div class="flex items-center align-center justify-evenly w-4/6 mt-4">
+      <div class="hidden lg:flex items-center align-center justify-evenly w-4/6 mt-4">
         <h1 class="font-['caveat'] text-3xl mb-[6px]">yo, <%= user.userName %></h1>
         <a class="text-sm" href="/profile">DOODLES</a>
         <a class="text-sm" href="/feed">DOODLEBOOK</a>
@@ -22,7 +22,14 @@
         <a class="text-sm" href="/logout">LOGOUT</a>
         <a href="/uploadPost" class="font-['caveat'] text-3xl bg-yellow text-black mt-3 py-2 px-10 rounded-md mb-4"><button>upload</button></a>
       </div>
-        
+
+      <button id="menu-btn" class="block hamburger mt-2 md:hidden focus:outline-none">
+        <img src="/images/line1.png" class="hamburger-top">
+        <img src="/images/line2.png" class="hamburger-middle mt-4">
+        <img src="/images/line3.png" class="hamburger-bottom mt-8">
+      </button>
     </header>
+
+    <script src="js/main.js"></script>
   </body>
 </html>
