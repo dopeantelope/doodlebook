@@ -1,19 +1,29 @@
 <%- include('partials/header-logged') -%>
-<div class="container">
-  <div class="row justify-content-center mt-5">
-    <div class="col-6">
-      <h2><%= post.title %> by <%= userName %> </h2>
-      <img class="img-fluid" src="<%= post.image%>" />
-      <div class="row justify-content-between">
-        <form
+<div class="">
+  <div class="mx-6 mt-8 mb-20 lg:mx-8">
+    <div class="flex flex-col lg:flex-row lg:items-end ">
+
+      <!--- POST IMAGE --->
+      <img class="lg:w-1/2" src="<%= post.image%>" />
+
+      <div class="lg:ml-6">
+
+        <div class="flex flex-col container">
+          <h2 class="font-['merriweather'] text-3xl md:text-4xl lg:text-5xl mb-8 mt-2 lg:mt-0 lg:mb-12 "><%= post.title %></h2>
+          <p class="inline-block font-['caveat'] text-3xl mb-2"><%= userName %></p>
+          <p class="font-['merriweather'] leading-6 tracking-wider"><%= post.caption %></p>
+        </div>
+
+        <!--- LIKE BUTTON --->
+        <!-- <form
           class="col-1"
           action="/post/likePost/<%= post.id %>?_method=PUT"
           method="POST"
         >
           <button class="btn btn-primary fa fa-heart" type="submit"></button>
-        </form>
-        <h3 class="col-3">Likes: <%= post.likes %></h3>
-        <%if(post.user == user.id){ %>
+        </form> -->
+
+        <!-- <%if(post.user == user.id){ %>
         <form
           action="/post/deletePost/<%= post.id %>?_method=DELETE"
           method="POST"
@@ -21,15 +31,10 @@
         >
           <button class="btn btn-primary fa fa-trash" type="submit"></button>
         </form>
-        <%}%>
+        <%}%> -->
+        <!-- <h3 class="col-3">Likes: <%= post.likes %></h3> -->
       </div>
     </div>
-    <div class="col-3 mt-5">
-      <p><%= post.caption %></p>
-    </div>
-    <div class="col-6 mt-5">
-      <a class="btn btn-primary" href="/profile">Return to Profile</a>
-      <a class="btn btn-primary" href="/feed">Return to Feed</a>
     </div>
   </div>
 </div>

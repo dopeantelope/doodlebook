@@ -2,11 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
 .hamburger {
   cursor: pointer;
-  width: 50px;
+  width: 40px;
   transition: all 0.25s;
   position: relative;
+}
+
+.mobile-menu {
+  height: calc(100vh + 86px);
+  transition: all 0.5s;
 }
 
 .hamburger-top,
@@ -34,5 +41,6 @@
 
 .open .hamburger-bottom {
   transform: rotate(-45deg) translateY(6px) translate(-6px);
-  translate: 0 -30px;
+  translate: 0 -20px;
 }
+

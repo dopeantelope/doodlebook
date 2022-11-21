@@ -14,22 +14,34 @@
   <body class="font-['lato']">
     <header class="flex justify-between m-6 mb-4 lg:m-6 lg:mb-12 lg:items-center lg:mx-8">
       <img src="/images/hi.png" class="logo w-[100px]">
-      <div class="hidden lg:flex items-center align-center justify-evenly w-4/6 mt-4">
+      <div class="hidden lg:flex items-center align-center justify-between w-4/6 mt-4">
         <h1 class="font-['caveat'] text-3xl mb-[6px]">yo, <%= user.userName %></h1>
         <a class="text-sm" href="/profile">DOODLES</a>
         <a class="text-sm" href="/feed">DOODLEBOOK</a>
-        <a class="text-sm" href="/feed">INPSIRATION</a>
+        <a class="text-sm" href="/feed">INSPIRATION</a>
         <a class="text-sm" href="/logout">LOGOUT</a>
         <a href="/uploadPost" class="font-['caveat'] text-3xl bg-yellow text-black mt-3 py-2 px-10 rounded-md mb-4"><button>upload</button></a>
       </div>
 
-      <button id="menu-btn" class="block hamburger mt-2 md:hidden focus:outline-none">
+      <button id="menu-btn" class="block hamburger z-10 mt-3 md:hidden focus:outline-none">
         <img src="/images/line1.png" class="hamburger-top">
-        <img src="/images/line2.png" class="hamburger-middle mt-4">
-        <img src="/images/line3.png" class="hamburger-bottom mt-8">
+        <img src="/images/line2.png" class="hamburger-middle mt-3">
+        <img src="/images/line3.png" class="hamburger-bottom mt-6">
       </button>
+
+      <div id="menu" class="absolute flex-col bg-yellow pb-10 items-end mt-[-100px] ml-[-24px] mobile-menu w-2/3 hidden">
+        <div class="flex flex-col space-y-8 pl-6 pt-28 text-black items-start font-['lato'] font-light text-base w-full">
+          <h1 class="font-['caveat'] text-5xl">doodlebook</h1>
+          <a class="text-sm font-bold" href="/profile">DOODLES</a>
+          <a class="text-sm font-bold" href="/feed">DOODLEBOOK</a>
+          <a class="text-sm font-bold" href="/feed">INSPIRATION</a>
+          <br>
+          <br>
+          <a class="text-sm font-bold" href="/logout">LOGOUT</a>
+        </div>
+      </div>
     </header>
 
-    <script src="js/main.js"></script>
+    <script type="text/javascript" src="/js/main.js"></script>
   </body>
 </html>
