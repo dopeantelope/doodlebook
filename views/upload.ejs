@@ -1,19 +1,19 @@
 <%- include('partials/header-logged') -%>
-<div class="flex justify-center mx-8 mb-20">
-  <div class="w-[600px] p-6 pt-0">
+<div class="flex justify-center mb-20">
+  <div class="w-[600px] pt-0 px-6">
     <h2 class="font-['caveat'] text-6xl mb-8 text-center">upload doodle</h2>
     <form action="/post/createPost" enctype="multipart/form-data" method="POST">
       <div class="mb-4">
           <label for="title" class="form-label font-['caveat'] text-4xl">title*</label><br>
-          <input type="text" maxlength = "100" class="form-control border-[1px] font-['lato'] w-full text-l py-2 px-2 text-left" id="title" name="title">
+          <input type="text" required maxlength = "100" class="focus:outline-none rounded-md focus:border-yellow focus:ring-1 focus:ring-yellow form-control border-[1px] font-['lato'] w-full text-l py-2 px-2 text-left" id="title" name="title">
       </div>
       <div class="mb-4">
         <label for="caption" class="form-label font-['caveat'] text-4xl">caption*</label>
-        <textarea maxlength = "400" class="form-control border-[1px] font-['lato'] text-l py-2 px-2 w-full text-left" id="caption" name="caption"></textarea>
+        <textarea maxlength="400" required class="focus:outline-none rounded-md focus:border-yellow focus:ring-1 focus:ring-yellow form-control border-[1px] font-['lato'] text-l py-2 px-2 w-full text-left" id="caption" name="caption"></textarea>
       </div>
       <div class="mb-4">
         <label for="imgUpload" class="form-label font-['caveat'] text-4xl">image*</label><br>
-        <input type="file" class="form-control border-[1px] w-full font-['lato'] text-l py-2 px-2 text-left" id="imageUpload" name="file">
+        <input type="file" required class="focus:outline-none rounded-md focus:border-yellow focus:ring-1 focus:ring-yellow form-control border-[1px] w-full font-['lato'] text-l py-2 px-2 text-left" id="imageUpload" name="file">
       </div>
       <button type="submit" class="font-['caveat'] text-3xl bg-yellow text-black mt-4 py-2 px-10 rounded-md" value="Upload">submit</button>
     </form>

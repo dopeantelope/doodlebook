@@ -12,6 +12,7 @@ module.exports = {
       console.error(err)
     }
   },
+
   getProfile: async (req, res) => {
     try {
       const posts = await Post.find({ user: req.user.id }).sort({ createdAt: "desc" }).lean();
@@ -20,6 +21,7 @@ module.exports = {
       console.log(err);
     }
   },
+
   getFeed: async (req, res) => {
     try {
       const posts = await Post.find().sort({ createdAt: "desc" }).lean();
@@ -28,11 +30,14 @@ module.exports = {
       console.log(err);
     }
   },
+
   getPost: async (req, res) => {
     try {
       const post = await Post.findById(req.params.id);
       const user = await User.findById(post.user)
-      res.render("post.ejs", { post: post, user: req.user, userName: user.userName });
+      res.render("post.ejs", { req: req, post: post, user: req.user, userName: user.userName, likes: post.likes });
+      console.log(user._id) // post user
+      console.log(!post.likes.includes(req.user._id)) // logged in user
       
     } catch (err) {
       console.log(err);
@@ -49,7 +54,6 @@ module.exports = {
         image: result.secure_url,
         cloudinaryId: result.public_id,
         caption: req.body.caption,
-        likes: 0,
         user: req.user.id,
       });
       console.log("Post has been added!");
@@ -58,20 +62,28 @@ module.exports = {
       console.log(err);
     }
   },
+
   likePost: async (req, res) => {
     try {
-      await Post.findOneAndUpdate(
-        { _id: req.params.id },
-        {
-          $inc: { likes: 1 },
-        }
-      );
-      console.log("Likes +1");
+      await Post.findOneAndUpdate({ _id: req.params.id }, {$push: { likes: req.user._id }}, { new : true })
+      console.log("liked post");
       res.redirect(`/post/${req.params.id}`);
     } catch (err) {
       console.log(err);
     }
   },
+
+  unlikePost: async (req, res) => {
+    try {
+      await Post.findByIdAndUpdate({_id: req.params.id},{$pull: { likes: req.user._id }},{ new: true })
+      res.redirect(`/post/${req.params.id}`);
+      console.log('unliked post')
+
+    } catch(err) {
+      console.log(err)
+    }
+  },
+
   deletePost: async (req, res) => {
     try {
       // Find post by id

@@ -9,19 +9,47 @@
       <div class="lg:ml-6">
 
         <div class="flex flex-col container">
-          <h2 class="font-['merriweather'] text-3xl md:text-4xl lg:text-5xl mb-8 mt-2 lg:mt-0 lg:mb-12 "><%= post.title %></h2>
+          <h2 class="font-['merriweather'] text-3xl md:text-4xl lg:text-5xl mb-4 mt-2 lg:mt-0 lg:mb-8 "><%= post.title %></h2>
           <p class="inline-block font-['caveat'] text-3xl mb-2"><%= userName %></p>
           <p class="font-['merriweather'] leading-6 tracking-wider"><%= post.caption %></p>
         </div>
 
+
+        <!--- BUTTONS --->
+        <div class="flex gap-2 mt-2">
+
+        <%= likes.length %>
         <!--- LIKE BUTTON --->
-        <!-- <form
+        <form
           class="col-1"
-          action="/post/likePost/<%= post.id %>?_method=PUT"
+          action= 
+            <% if (!likes.includes(req.user._id)) { %>
+              "/post/likePost/<%= post.id %>?_method=PUT"
+            <% } %>
+            <% if (likes.includes(req.user._id) === true) { %>
+              "/post/unlikePost/<%= post.id %>?_method=PUT"
+            <% } %>
           method="POST"
         >
-          <button class="btn btn-primary fa fa-heart" type="submit"></button>
-        </form> -->
+          <button id="like-btn" class="flex items-center gap-[2px]" type="submit">LIKE 
+            <svg id="heart" class="
+            <% if (!likes.includes(req.user._id)) { %>
+              fill-none
+            <% } %>
+            <% if (likes.includes(req.user._id) === true) { %>
+              fill-yellow
+            <% } %>
+            " xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><path d="M128,216S28,160,28,92A52,52,0,0,1,128,72h0A52,52,0,0,1,228,92C228,160,128,216,128,216Z" stroke-linecap="round" stroke-linejoin="round" stroke="#000000" stroke-width="16"></path>
+            </svg>
+          </button>
+        </form>
+
+
+        <!--- INSPO BUTTON -->
+          <button id="inspo-btn" class="flex items-center" type="submit">INSPO
+            <svg id="lightbulb" class="fill-yellow fill-none" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#000000" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="88" y1="232" x2="168" y2="232" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line><line x1="128" y1="200" x2="128" y2="144" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line><polyline points="96 112 128 144 160 112" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></polyline><path d="M78.7,167A79.5,79.5,0,0,1,48,104.5C47.8,61.1,82.7,25,126.1,24a80,80,0,0,1,51.3,142.9A24.2,24.2,0,0,0,168,186v6a8,8,0,0,1-8,8H96a8,8,0,0,1-8-8v-6A24.4,24.4,0,0,0,78.7,167Z" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></path></svg>
+          </button>
+        </div>
 
         <!-- <%if(post.user == user.id){ %>
         <form
@@ -39,4 +67,13 @@
   </div>
 </div>
 
+<script>
+  document.getElementById('like-btn').addEventListener('click', () => {
+    document.getElementById('heart').classList.toggle('fill-none')
+  })
+
+  document.getElementById('inspo-btn').addEventListener('click', () => {
+    document.getElementById('lightbulb').classList.toggle('fill-none')
+  })
+</script>
 

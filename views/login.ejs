@@ -2,7 +2,7 @@
 
 
   <div class="flex justify-center h-[calc(100vh-150px)]">
-    <section class="flex flex-col mt-10">
+    <section class="flex flex-col p-6">
       <% if (locals.messages.errors) { %> <% messages.errors.forEach( el => { %>
       <div class="font-['lato']"><%= el.msg %></div>
       <% }) %> <% } %> <% if (locals.messages.info) { %> <%
