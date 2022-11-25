@@ -35,9 +35,7 @@ module.exports = {
     try {
       const post = await Post.findById(req.params.id);
       const user = await User.findById(post.user)
-      res.render("post.ejs", { req: req, post: post, user: req.user, userName: user.userName, likes: post.likes });
-      console.log(user._id) // post user
-      console.log(!post.likes.includes(req.user._id)) // logged in user
+      res.render("post.ejs", { req: req, post: post, user: req.user, userName: user.userName, likes: post.likes, comments: post.comments });
       
     } catch (err) {
       console.log(err);
@@ -91,11 +89,24 @@ module.exports = {
       // Delete image from cloudinary
       await cloudinary.uploader.destroy(post.cloudinaryId);
       // Delete post from db
-      await Post.remove({ _id: req.params.id });
-      console.log("Deleted Post");
+      await Post.deleteOne({ _id: req.params.id });
+      console.log("deleted post");
       res.redirect("/profile");
     } catch (err) {
       res.redirect("/profile");
+    }
+  },
+
+  comment: async (req, res) => {
+    try {
+      const comment = await { text: req.body.caption, postedBy: req.user.userName };
+      await Post.findByIdAndUpdate({_id: req.params.id}, {$push: { comments: comment }},
+        { new: true }
+      )
+      console.log(req.user.userName)
+      res.redirect(`/post/${req.params.id}`);
+    } catch(err) {
+      console.log(err)
     }
   },
 };
