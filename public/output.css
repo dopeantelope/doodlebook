@@ -1244,14 +1244,6 @@ video {
   padding-bottom: 0.25rem;
 }
 
-.pb-\[2px\] {
-  padding-bottom: 2px;
-}
-
-.pb-\[1px\] {
-  padding-bottom: 1px;
-}
-
 .pb-2 {
   padding-bottom: 0.5rem;
 }
@@ -1577,14 +1569,6 @@ video {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .md\:flex-row {
-    flex-direction: row;
-  }
-
-  .md\:justify-center {
-    justify-content: center;
-  }
-
   .md\:text-8xl {
     font-size: 6rem;
     line-height: 1;
@@ -1593,16 +1577,6 @@ video {
   .md\:text-4xl {
     font-size: 2.25rem;
     line-height: 2.5rem;
-  }
-
-  .md\:text-2xl {
-    font-size: 1.5rem;
-    line-height: 2rem;
-  }
-
-  .md\:text-3xl {
-    font-size: 1.875rem;
-    line-height: 2.25rem;
   }
 }
 
@@ -1628,6 +1602,10 @@ video {
     margin-bottom: 2rem;
   }
 
+  .lg\:mb-2 {
+    margin-bottom: 0.5rem;
+  }
+
   .lg\:mr-4 {
     margin-right: 1rem;
   }
@@ -1642,18 +1620,6 @@ video {
 
   .lg\:mb-12 {
     margin-bottom: 3rem;
-  }
-
-  .lg\:mb-6 {
-    margin-bottom: 1.5rem;
-  }
-
-  .lg\:mb-4 {
-    margin-bottom: 1rem;
-  }
-
-  .lg\:mb-2 {
-    margin-bottom: 0.5rem;
   }
 
   .lg\:flex {
