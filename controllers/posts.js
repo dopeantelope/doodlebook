@@ -109,4 +109,17 @@ module.exports = {
       console.log(err)
     }
   },
+
+  deleteComment: async (req, res) => {
+    try {
+      const post = await Post.findById({ _id: req.params.id })
+      await Post.findByIdAndUpdate({_id: req.params.id}, {$pull: { comments: {_id: req.params.commentId}}})
+
+      console.log(req.params.commentId)
+      
+      res.redirect(`/post/${req.params.id}`);
+    } catch(err) {
+      console.log(err)
+    }
+  },
 };

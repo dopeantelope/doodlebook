@@ -15,7 +15,13 @@ const UserSchema = new mongoose.Schema({
   password: {
     type: String,
   },
-  likedPost: {
+  inspirations: {
+    type: Array
+  },
+  followers: {
+    type: Array
+  },
+  following: {
     type: Array
   }
 })
