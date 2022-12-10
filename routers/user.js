@@ -6,4 +6,4 @@ const { ensureAuth } = require("../middleware/auth")
 
 
 router.get("/inspirations", ensureAuth, userController.getInspirations)
-router.post("/addToInspirations", userController.addToInspirations)
+router.put("user/addToInspirations/:id", userController.addToInspirations)

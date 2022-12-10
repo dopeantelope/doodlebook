@@ -916,6 +916,10 @@ video {
   width: 66.666667%;
 }
 
+.w-1\/2 {
+  width: 50%;
+}
+
 .border-collapse {
   border-collapse: collapse;
 }
@@ -946,6 +950,10 @@ video {
 
 .flex-col {
   flex-direction: column;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
 }
 
 .items-start {
@@ -1018,6 +1026,23 @@ video {
 
 .overflow-hidden {
   overflow: hidden;
+}
+
+.break-normal {
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+.break-words {
+  overflow-wrap: break-word;
+}
+
+.break-all {
+  word-break: break-all;
+}
+
+.break-keep {
+  word-break: keep-all;
 }
 
 .rounded-full {
@@ -1600,10 +1625,6 @@ video {
 
   .lg\:mb-8 {
     margin-bottom: 2rem;
-  }
-
-  .lg\:mb-2 {
-    margin-bottom: 0.5rem;
   }
 
   .lg\:mr-4 {
