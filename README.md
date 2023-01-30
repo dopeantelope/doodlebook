@@ -4,7 +4,7 @@ A social media that lets users upload doodles and browse others on the community
 ![Alt Text](https://i.ibb.co/wsm31Qt/Screenshot-2022-12-11-at-19-40-13.png)
 
 ## How It's Made:
-Full-stack CRUD application that adopts MVC architecture with a tech stack of JavaScript, EJS, Tailwind, Node.js, Express, MongoDB and Mongoose. Users are able to create accounts and login with authentication via Passport. Users can upload images via Multer that are then stored on Cloudinary for optimization. Users have their own profiles with their own uploads but they can also browse the 'doodlebook' this is where all uploads are displayed. Users can browse through the doodlebook and like and make comments on other images.  
+This is a full-stack CRUD application that implements the MVC architectural pattern and leverages the following technologies: JavaScript, EJS, Tailwind, Node.js, Express, MongoDB and Mongoose. The application allows for the creation of user accounts with secure authentication via Passport and enables the uploading of images through the utilization of Multer and storage on Cloudinary for efficient optimization. Each user has a unique profile featuring their own uploads and the ability to browse the centralized 'doodlebook' repository where all images are displayed.
 
 
 
