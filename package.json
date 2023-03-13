@@ -4,8 +4,9 @@
   "description": "A social media to upload doodles and drawings",
   "main": "index.js",
   "scripts": {
-    "start": "concurrently \"nodemon server.js\" \"tailwindcss -i ./public/input.css -o ./public/output.css --watch\" ",
+    "start": "node server.js",
     "build": "tailwindcss -i ./public/input.css -o ./public/output.css",
+    "prod": "concurrently \"nodemon server.js\" \"tailwindcss -i ./public/input.css -o ./public/output.css --watch\" ",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

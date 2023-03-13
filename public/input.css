@@ -44,3 +44,6 @@
   translate: 0 -20px;
 }
 
+.post--details {
+  width: calc(50vw - 64px);
+}
