@@ -8,7 +8,7 @@
 
       <div class="lg:ml-6">
 
-        <div class="flex flex-col container break-words">
+        <div class="md:post--details flex flex-col container break-words">
           <h1 class="font-['merriweather'] text-3xl md:text-4xl lg:text-5xl mb-4 mt-2 lg:mt-0 lg:mb-8 "><%= post.title %></h1>
           <h2 class="inline-block font-['caveat'] text-3xl mb-2"><%= userName %></h2>
           <p class="font-['merriweather'] leading-6 tracking-wider"><%= post.caption %></p>
@@ -35,7 +35,7 @@
               <% } %>
             method="POST"
           >
-            <button id="like-btn" class="flex items-center gap-[2px]" type="submit">LIKE 
+            <button title="like post" id="like-btn" class="flex items-center gap-[2px]" type="submit">LIKE 
               <svg id="heart" class="
               <% if (!likes.includes(req.user._id)) { %>
                 fill-none
@@ -55,7 +55,7 @@
               action="/user/addToInpsirations/<%= post.id %>?_method=PUT"
               method="POST"
             >
-              <button id="inspo-btn" class="flex items-center" type="submit">INSPO
+              <button title="add to inspo" id="inspo-btn" class="flex items-center" type="submit">INSPO
                 <svg id="lightbulb" class="fill-yellow fill-none" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#000000" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="88" y1="232" x2="168" y2="232" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line><line x1="128" y1="200" x2="128" y2="144" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line><polyline points="96 112 128 144 160 112" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></polyline><path d="M78.7,167A79.5,79.5,0,0,1,48,104.5C47.8,61.1,82.7,25,126.1,24a80,80,0,0,1,51.3,142.9A24.2,24.2,0,0,0,168,186v6a8,8,0,0,1-8,8H96a8,8,0,0,1-8-8v-6A24.4,24.4,0,0,0,78.7,167Z" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></path></svg>
               </button>
             </form>
@@ -70,7 +70,7 @@
             method="POST"
             class="col-3"
           >
-          <button id="inspo-btn" class="flex items-center" type="submit">
+          <button title="delete post" id="inspo-btn" class="flex items-center" type="submit">
             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#000000" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="216" y1="56" x2="40" y2="56" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line><line x1="104" y1="104" x2="104" y2="168" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line><line x1="152" y1="104" x2="152" y2="168" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line><path d="M200,56V208a8,8,0,0,1-8,8H64a8,8,0,0,1-8-8V56" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></path><path d="M168,56V40a16,16,0,0,0-16-16H104A16,16,0,0,0,88,40V56" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></path></svg>
           </button>
           </form>
